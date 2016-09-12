@@ -1,4 +1,4 @@
-import java.util.scanner; //import statement
+import java.util.Scanner; //import statement
 
 public class BMICalculator
 {
@@ -14,7 +14,9 @@ public class BMICalculator
 		
 		int weight = keyboard.nextInt();
 		
-		int BMI = 703*weight/height^2;
+		int BMI = (703*weight)/(height*height);
 		
-		System.out.println("Your BMI")
+		System.out.println("Your BMI is " + BMI);
+	}
+		
 	}
