@@ -10,45 +10,52 @@ public class Receipt
 		
 		//user inputs
 		System.out.println("Please enter item 1");
-		System item1 = kb.next();
+		String item1 = kb.next();
 		
 		System.out.println("Please enter the price");
-		double price1 = kb.nextdouble();
+		double price1 = kb.nextDouble();
 		
 		System.out.println("Please enter item 2");
-		System item2 = kb.next();
+		String item2 = kb.next();
 		
 		System.out.println("Please enter the price");
-		double price2 = kb.nextdouble();
+		double price2 = kb.nextDouble();
 		
 		System.out.println("Please enter item 3");
-		System item3 = kb.next();
+		String item3 = kb.next();
 		
 		System.out.println("Please enter the price");
-		double price3 = kb.nextdouble();
+		double price3 = kb.nextDouble();
 		
 		String subtotal = "Subtotal";
 		double subtotal1 = price1 + price2 + price3;
 		
-		String tq
+		String tax = "Tax:";
+		double tax1 = subtotal1*.08;
 		
-		//print your header <<<<receipt>>>>
-		form.receipt(item1, price1);
-		form.receipt(item2, price2);
-		form.receipt(item3, price3);
-		//subtotal
-		System.out.println();
-		//tax
-		System.out.println();
-		//total
-		System.out.println();
-		//add your line use ____
+		String total = "Total:";
+		double total1 = subtotal1 + tax1;
 		
-		//print thank you message
+		System.out.println("\t\t\t" + "<<<<Receipt>>>>");
+		
+		form.format(item1, price1);
+		form.format(item2, price2);
+		form.format(item3, price3);
+		form.format(subtotal, subtotal1);
+		form.format(tax, tax1);
+		form.format(total, total1);
+		
+		System.out.println("\n" + "\t" + "___________________________________");
+		System.out.println("\t" + "  Thank you for shopping with us!");
+	
 		
 	}
-		public void receipt(String item, String price);
-	{
-		System.out.printf("\n%20s   %10.2f", item, price);
-	}
+		public void format(String item, double price)
+		{
+			System.out.printf("\n%20s   %10.2f", item, price);
+			
+		}
+
+		
+	
 }
