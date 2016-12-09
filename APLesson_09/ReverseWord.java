@@ -4,25 +4,30 @@ public class ReverseWord
 {
 	public static void main(String[]args)
 	{
-		Scanner kb = new Scanner(System.in);
 		String[] words = new String[5];
-		
+		Scanner kb = new Scanner(System.in);
 		System.out.println("Please enter 5 words. Make sure to press enter in between each word");
-		for (int i = 0; i < word.length; i++)
+		
+		for (int i = 0; i < words.length; i++)
 		{
-			word[i] = kb.next();
+			words[i] = kb.next();
 		}
 		System.out.println("\nIn order:\n");
+		
 		for(String word : words)
 		{
 			System.out.println(word);
 		}
-		System.out.println("\nReversed\n");
-		reverse();
+		System.out.println();
+		System.out.println("Reversed");
+		reverse(words);
 	}
-	public static void reverse()
+	public static void reverse(String[]words)
 	{
-		for(int i = 0;)
+		for(int i = words.length - 1; i >= 0; i--)
+		{
+			System.out.println(words[i]);
+		}	
 	}
 
 }
